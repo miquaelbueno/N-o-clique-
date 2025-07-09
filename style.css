@@ -1,0 +1,82 @@
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  transition: background 0.2s;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 18px;
+  background-color: darkred;
+  color: white;
+  border: 2px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  animation: tremer 0.2s infinite alternate;
+}
+
+@keyframes tremer {
+  from { transform: translateX(-2px); }
+  to   { transform: translateX(2px); }
+}
+
+.janela {
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  background-color: #1a0000;
+  border: 2px solid red;
+  box-shadow: 0 0 20px red;
+  padding: 10px;
+  z-index: 999;
+  animation: piscar 0.5s infinite alternate;
+}
+
+@keyframes piscar {
+  from { opacity: 1; }
+  to   { opacity: 0.6; }
+}
+
+.janela h3 {
+  margin: 0;
+  background-color: red;
+  color: black;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.janela p {
+  font-size: 16px;
+  color: white;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#jumpscare {
+  position: fixed;
+  width: 300px;
+  z-index: 1000;
+  display: none;
+  transition: top 0.5s ease, left 0.5s ease;
+  user-select: none;
+  pointer-events: none; /* Para não interferir em cliques */
+}
+
+@keyframes moverJumpscare {
+  0% {
+    left: -400px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
